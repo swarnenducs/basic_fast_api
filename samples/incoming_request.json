@@ -1,0 +1,31 @@
+{
+  "agreement": {
+    "agreement_num": "50002187",
+    "contract_type": "0001",
+    "total_revenue_12m": 245000.0,
+    "sales_commitment": 50000.0,
+    "class_of_trade": "AC,GP,HH",
+    "valid_from_dt": "2026-01-01",
+    "valid_to_dt": "2026-12-31",
+    "request_type": "New Contract",
+    "entity_type": "GPO"
+  },
+  "products": [
+    {
+      "prod_num": "1642201",
+      "prod_desc": "AQUACEL AG FOAM 10X10CM (1X10PK) US",
+      "product_franchise": "WOUND CARE",
+      "prod_sub_grp_desc": "ADVANCED WOUND DRESSINGS",
+      "list_price_ea": 42.50,
+      "base6_ea": 42.50,
+      "cost_ea": 12.80,
+      "min_price_ea": 21.25,
+      "quantity_12m": 8400.0,
+      "prod_icc_code": "ICC-2210",
+      "prod_hierarchy": "WC0301",
+      "uom": "EA",
+      "proposed_revenue": 356000.0,
+      "historic_revenue": 356000.0
+    }
+  ]
+}

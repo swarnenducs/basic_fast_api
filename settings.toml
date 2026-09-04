@@ -1,0 +1,31 @@
+[default]
+APP_NAME = "ML API"
+APP_ENV = "development"
+ML_MODEL_VERSION = "v1.0.0"
+SQL_BACKEND = "sqlite"
+SQL_CONNECTION_STRING = "sqlite:///./ml_api.db"
+AZURE_SQL_SERVER = ""
+AZURE_SQL_DATABASE = ""
+AZURE_SQL_USERNAME = ""
+AZURE_SQL_PASSWORD = ""
+AZURE_SQL_DRIVER = "ODBC Driver 18 for SQL Server"
+AZURE_SQL_CONNECTION_STRING = ""
+BLOB_ACCOUNT_URL = ""
+BLOB_CONTAINER_NAME = "ml-models"
+BLOB_MODEL_PATH = "models/pricing_model.pkl"
+REST_CLIENT_BASE_URL = "http://localhost:8000"
+MCP_ENDPOINT = "http://127.0.0.1:8080/mcp"
+MCP_TRANSPORT = "http"
+MCP_SERVER_NAME = "pricing-mcp"
+MCP_TOOL_NAME = "get_pricing_context"
+MCP_TIMEOUT_SECONDS = 30
+
+[development]
+APP_ENV = "development"
+ML_MODEL_VERSION = "v1.0.0"
+SQL_BACKEND = "sqlite"
+
+[production]
+APP_ENV = "production"
+ML_MODEL_VERSION = "v1.0.0"
+SQL_BACKEND = "azure_sql"

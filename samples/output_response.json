@@ -1,0 +1,14 @@
+{
+  "cohort_segment_key": " ",
+  "pricing_reasoning": " ",
+  "products": [
+    {
+      "prod_num": "1642201",
+      "lower_corridor_ea": 0.0,
+      "target_price_ea": 0.0,
+      "upper_corridor_ea": 0.0,
+      "segment_mid_point_ea": 0.0,
+      "price_elasticity": 0.0
+    }
+  ]
+}

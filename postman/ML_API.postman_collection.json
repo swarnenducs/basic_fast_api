@@ -1,0 +1,81 @@
+{
+  "info": {
+    "name": "ML API",
+    "_postman_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "description": "Postman collection for the ML pricing API. Covers health check and ML invoke.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://127.0.0.1:8000"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health",
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/health",
+              "host": ["{{baseUrl}}"],
+              "path": ["health"]
+            },
+            "description": "Liveness check. Returns app name, environment, and ML model version."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "ML",
+      "item": [
+        {
+          "name": "Invoke ML Model",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"agreement\": {\n    \"agreement_num\": \"50002187\",\n    \"contract_type\": \"0001\",\n    \"total_revenue_12m\": 245000.0,\n    \"sales_commitment\": 50000.0,\n    \"class_of_trade\": \"AC,GP,HH\",\n    \"valid_from_dt\": \"2026-01-01\",\n    \"valid_to_dt\": \"2026-12-31\",\n    \"request_type\": \"New Contract\",\n    \"entity_type\": \"GPO\"\n  },\n  \"products\": [\n    {\n      \"prod_num\": \"1642201\",\n      \"prod_desc\": \"AQUACEL AG FOAM 10X10CM (1X10PK) US\",\n      \"product_franchise\": \"WOUND CARE\",\n      \"prod_sub_grp_desc\": \"ADVANCED WOUND DRESSINGS\",\n      \"list_price_ea\": 42.50,\n      \"base6_ea\": 42.50,\n      \"cost_ea\": 12.80,\n      \"min_price_ea\": 21.25,\n      \"quantity_12m\": 8400.0,\n      \"prod_icc_code\": \"ICC-2210\",\n      \"prod_hierarchy\": \"WC0301\",\n      \"uom\": \"EA\",\n      \"proposed_revenue\": 356000.0,\n      \"historic_revenue\": 356000.0\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/ml/invoke",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "ml", "invoke"]
+            },
+            "description": "Invokes the ML pricing model. Returns the static corridor response. The generated UUID is returned in the X-Id header and stored with request + response in SQLAlchemy."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Docs",
+      "item": [
+        {
+          "name": "OpenAPI / Swagger JSON",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/openapi.json",
+              "host": ["{{baseUrl}}"],
+              "path": ["openapi.json"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
